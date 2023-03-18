@@ -14,6 +14,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func button1(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func button2(_ sender: Any) {
+    }
+    
+    
+    
+    @IBAction func button3(_ sender: Any) {
+    }
 }
 
