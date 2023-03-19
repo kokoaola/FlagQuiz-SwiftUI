@@ -44,11 +44,12 @@ class ViewController: UIViewController {
     
     
     func askQuestion(action: UIAlertAction!) {
+        countries.shuffle()
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         correctAnswer = Int.random(in: 0...2)
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased())(score:\(score))"
     }
     
     
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
             title = "Wrong"
             score -= 1
         }
-        ///title変数はif文で「正しい」か「間違っている」のどちらかに設定されており、文字列補間についてはすでに学習済みなので、そこでまず新しいのは、preferredStyleに.alertパラメータが使用されていることです。UIAlertController()では、画面の中央上にメッセージボックスをポップアップする.alertと、下からオプションをスライドして表示する.actionSheetの2種類のスタイルが用意されています。両者は似ていますが、Appleはユーザーに状況の変化を伝える場合は.alertを、選択肢の中から選んでもらう場合は.actionSheetを使うことを推奨しています。
+        ///UIAlertController()では、画面の中央上にメッセージボックスをポップアップする.alertと、下からオプションをスライドして表示する.actionSheetの2種類のスタイルが用意されています。両者は似ていますが、Appleはユーザーに状況の変化を伝える場合は.alertを、選択肢の中から選んでもらう場合は.actionSheetを使うことを推奨しています。
         
         ///2行目は、UIAlertActionデータ型を使用して、アラートに「Continue」というボタンを追加し、それに「default」というスタイルを与えています。.default、.cancel、.destructiveという3つのスタイルがあります。これらがどのように見えるかはiOSによって異なりますが、ユーザーに微妙なユーザー・インターフェースのヒントを提供するため、適切に使用することが重要です。
         
