@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var questionCounter = 0
     
     override func viewDidLoad() {
         
@@ -44,12 +45,26 @@ class ViewController: UIViewController {
     
     
     func askQuestion(action: UIAlertAction!) {
+        if questionCounter >= 3{
+            finishGame()
+            return
+        }else{
+            questionCounter += 1
+        }
         countries.shuffle()
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         correctAnswer = Int.random(in: 0...2)
-        title = "\(countries[correctAnswer].uppercased())(score:\(score))"
+        title = "\(questionCounter). \(countries[correctAnswer].uppercased())(score:\(score))"
+    }
+    
+    
+    func finishGame(){
+        let ac = UIAlertController(title: "Finish!", message: "Your total score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "New Game", style: .default, handler: askQuestion))
+        present(ac, animated: true)
+        questionCounter = 0
     }
     
     
