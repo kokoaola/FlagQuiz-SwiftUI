@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     
     func askQuestion(action: UIAlertAction!) {
-        if questionCounter >= 3{
+        if questionCounter >= 10{
             finishGame()
             return
         }else{
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     
     func finishGame(){
-        let ac = UIAlertController(title: "Finish!", message: "Your total score is \(score).", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Finish!", message: "Your score is \(score).", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "New Game", style: .default, handler: askQuestion))
         present(ac, animated: true)
         questionCounter = 0
@@ -71,19 +71,22 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: UIButton) {
 
         var title: String
+        var message: String
         
         if sender.tag == correctAnswer {
             title = "Correct"
+            message = "score +1."
             score += 1
         } else {
-            title = "Wrong"
+            title = "Wrong!"
+            message = "That’s the flag of \(countries[correctAnswer].uppercased()).\nscore -1"
             score -= 1
         }
         ///UIAlertController()では、画面の中央上にメッセージボックスをポップアップする.alertと、下からオプションをスライドして表示する.actionSheetの2種類のスタイルが用意されています。両者は似ていますが、Appleはユーザーに状況の変化を伝える場合は.alertを、選択肢の中から選んでもらう場合は.actionSheetを使うことを推奨しています。
         
         ///2行目は、UIAlertActionデータ型を使用して、アラートに「Continue」というボタンを追加し、それに「default」というスタイルを与えています。.default、.cancel、.destructiveという3つのスタイルがあります。これらがどのように見えるかはiOSによって異なりますが、ユーザーに微妙なユーザー・インターフェースのヒントを提供するため、適切に使用することが重要です。
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         ///この行の最後には、handler: askQuestionというパラメータがあります。handlerパラメータは、クロージャ（ボタンがタップされたときに実行するコード）を探しています。この中にカスタムコードを書くこともできますが、今回のケースではボタンがタップされたときにゲームを続行させたいので、askQuestionを渡してiOSがaskQuestion()メソッドを呼び出すようにしました。
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
