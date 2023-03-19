@@ -21,8 +21,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="us"/>
                                 <connections>
-                                    <action selector="button1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sxJ-HX-qiP"/>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jr0-eu-vDa"/>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSs-lw-Hag"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PT-mh-jrM">
@@ -30,8 +29,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="france"/>
                                 <connections>
-                                    <action selector="button2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vh9-Q1-AlF"/>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7E2-5M-PeG"/>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQq-P7-p7k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAK-Iw-uc4">
@@ -39,8 +37,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="spain"/>
                                 <connections>
-                                    <action selector="button3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yon-Fd-Oma"/>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ho-e0-Sin"/>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pld-VY-Efl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,9 +54,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="rIz-dK-9sD"/>
                     <connections>
-                        <outlet property="button1" destination="zDq-18-eS7" id="J6M-qE-5ho"/>
-                        <outlet property="button2" destination="3PT-mh-jrM" id="1ha-Xv-HKX"/>
-                        <outlet property="button3" destination="yAK-Iw-uc4" id="6Wi-rm-h4N"/>
+                        <outlet property="button1" destination="zDq-18-eS7" id="uch-sG-R5b"/>
+                        <outlet property="button2" destination="3PT-mh-jrM" id="xUg-v2-wiR"/>
+                        <outlet property="button3" destination="yAK-Iw-uc4" id="GJz-0F-X3S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
